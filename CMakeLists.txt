@@ -16,10 +16,6 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
 )
 
-catkin_package(
-#include DIRS include 
-#LIBRARIES robotics_lab1
-CATKIN DEPENDS geometry_msgs roscpp rospy turtlesim message_runtime std_msgs
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -55,11 +51,12 @@ CATKIN DEPENDS geometry_msgs roscpp rospy turtlesim message_runtime std_msgs
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
+add_message_files(
+  FILES
+  Turtlecontrol.msg
 #   Message1.msg
 #   Message2.msg
-# )
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -76,10 +73,11 @@ CATKIN DEPENDS geometry_msgs roscpp rospy turtlesim message_runtime std_msgs
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   geometry_msgs#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  geometry_msgs
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -113,7 +111,7 @@ CATKIN DEPENDS geometry_msgs roscpp rospy turtlesim message_runtime std_msgs
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES robotics_lab1
-#  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs turtlesim
+CATKIN_DEPENDS geometry_msgs roscpp rospy turtlesim message_runtime std_msgs
 #  DEPENDS system_lib
 )
 
