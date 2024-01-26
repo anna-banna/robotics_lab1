@@ -5,14 +5,15 @@
 import rospy
 from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
+from robotics_lab1.msg import Turtlecontrol
 import math 
 
-x_pos = 0
-y_pos = 0
+turtle_control_msg = Turtlecontrol()
+
 def pose_callback(data):
-	x_pos = data.x
-	y_pos = data.y
-	print(data.x, data.y)
+	global turtle_control_msg
+	turtle_control_msg.kp =
+	turtle_control_msg.xd = 
 
 
 if __name__ == '__main__': 
